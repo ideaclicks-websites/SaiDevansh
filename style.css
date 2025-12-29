@@ -1,0 +1,667 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+ /* Header */
+.header {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 10px 20px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    height: 80px;
+    flex-shrink: 0;
+}
+
+.logo img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+.header-cta {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+/* Updated CTA Icons (Only change made here) */
+.cta-icon {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    white-space: nowrap;
+    transition: transform 0.2s;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn-call {
+    background: #0C4068;
+    color: #fff;
+}
+
+.btn-whatsapp {
+    background: #25d366;
+    color: #fff;
+}
+
+/* Mobile responsive fix */
+@media (max-width: 480px) {
+    .btn-text {
+        font-size: 13px;
+    }
+    .cta-icon {
+        width: 24px;
+        height: 24px;
+    }
+    .header-cta {
+        gap: 15px;
+    }
+}
+      /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+            padding: 60px 20px;
+        }
+        
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .hero-content {
+            text-align: left;
+        }
+        
+        .hero h1 {
+            font-size: 32px;
+            color: #0C4068;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        
+        .hero h2 {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+        
+        .benefits {
+            margin-bottom: 30px;
+        }
+        
+        .benefit {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            font-size: 16px;
+            color: #444;
+        }
+        
+        .benefit::before {
+            content: "✓";
+            color: #FAC112;
+            font-weight: 700;
+            font-size: 20px;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .hero-image {
+            width: 100%;
+            max-width: 520px; /* keeps nice size on desktop */
+            aspect-ratio: 1 / 1; /* stays square */
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(12,64,104,0.15);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto; /* keeps left alignment balanced */
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Full image visible, NO CROP */
+        }
+
+        
+        .btn-large {
+            padding: 16px 32px;
+            font-size: 16px;
+        }
+
+        /* Large CTA icons only for hero buttons */
+.cta-icon-large {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.hero-cta .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+@media (min-width: 769px) { /* Desktop screens */
+    .hero-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-image {
+        order: 1; /* Image stays LEFT */
+    }
+
+    .hero-content {
+        order: 2; /* Content stays RIGHT */
+        text-align: left;
+    }
+}
+
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5
+            40px 20px;
+        }
+        
+        .section-heading {
+            text-align: center;
+            font-size: 32px;
+            color: #0C4068;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+        
+        /* Services */
+        .services-section {
+            margin-bottom: 50px;
+            margin-top: 20px;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+        
+        .service-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(12,64,104,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-icon {
+            width: 100%;
+            aspect-ratio: 1 / 1;  /* makes it a perfect square */
+            margin-bottom: 15px;
+            background: #f0f8ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .service-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* NO cropping */
+            background: #fff; /* optional, avoids odd transparent edges */
+        }
+
+        .service-card h3 {
+            color: #0C4068;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        /* Temple Routes Table */
+        .routes-section {
+            margin: 50px 0;
+        }
+        
+        .routes-table {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(12,64,104,0.1);
+        }
+        
+        .routes-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .routes-table th {
+            background: #0C4068;
+            color: #fff;
+            padding: 15px;
+            text-align: left;
+            font-size: 16px;
+        }
+        
+        .routes-table td {
+            padding: 15px;
+            border-bottom: 1px solid #f0f0f0;
+            color: #444;
+        }
+        
+        .routes-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .routes-table tr:hover {
+            background: #f0f8ff;
+        }
+        
+        /* Fleet Section */
+        .fleet-section {
+            margin: 50px 0;
+        }
+        
+        .fleet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .fleet-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(12,64,104,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .fleet-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .fleet-image {
+            width: 100%;
+            aspect-ratio: 1 / 1; /* Forces 1:1 square box */
+            overflow: hidden;
+            background: #f5f5f5;
+        }
+        
+.fleet-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Shows full image without cutting */
+}
+
+        
+        .fleet-info {
+            padding: 20px;
+        }
+        
+        .fleet-info h3 {
+            font-size: 20px;
+            color: #0C4068;
+            margin-bottom: 10px;
+        }
+        
+        .fleet-info p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .fleet-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .fleet-feature {
+            background: #f0f8ff;
+            color: #0C4068;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        /* Trust Banner */
+        .trust-banner {
+            background: linear-gradient(135deg, #FAC112 0%, #ffd54f 100%);
+            color: #0C4068;
+            padding: 30px 20px;
+            text-align: center;
+            margin: 50px 0;
+        }
+        
+        .trust-banner h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .trust-banner p {
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            margin: 50px 0;
+        }
+        
+        .testimonial-slider {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .testimonial {
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(12,64,104,0.1);
+        }
+        
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .testimonial-info {
+            flex: 1;
+        }
+        
+        .testimonial-name {
+            font-weight: 600;
+            color: #0C4068;
+        }
+        
+        .testimonial-rating {
+            color: #FAC112;
+            font-size: 14px;
+        }
+        
+        .testimonial-text {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        /* Story */
+        .story {
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(12,64,104,0.1);
+            margin: 50px 0;
+        }
+        
+        .story h2 {
+            font-size: 26px;
+            color: #0C4068;
+            margin-bottom: 20px;
+        }
+        
+        .story p {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+      /* Final CTA */
+.final-cta {
+    background: linear-gradient(135deg, #0C4068 0%, #0d5280 100%);
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    margin: 50px 0 0;
+}
+
+.final-cta h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.final-cta p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.final-cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-final {
+    padding: 20px 40px;
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-yellow {
+    background: #25d366;
+    color: #eef2f5;
+}
+
+/* Only change — Final CTA icon image */
+.cta-icon-final {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+/* Mobile responsiveness remains intact */
+@media (max-width: 480px) {
+    .cta-icon-final {
+        width: 24px;
+        height: 24px;
+    }
+    .btn-final {
+        font-size: 16px;
+        padding: 16px 28px;
+    }
+}
+  
+        /* Footer */
+        .footer {
+            background: #0C4068;
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .footer p {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+        
+        .credits {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .credits a {
+            color: #FAC112;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+        
+        .credits a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 8px 15px;
+            }
+            
+            .logo {
+                height: 75px;
+            }
+            
+            .btn {
+                padding: 8px 12px;
+                font-size: 11px;
+                gap: 4px;
+            }
+            
+            .btn-text {
+                display: none;
+            }
+            
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content {
+                text-align: center;
+            }
+            
+            .hero-cta {
+                justify-content: center;
+            }
+            
+            .hero-image {
+                height: 300px;
+            }
+            
+            .hero h1 {
+                font-size: 24px;
+            }
+            
+            .hero h2 {
+                font-size: 16px;
+            }
+            
+            .service-card {
+                padding: 20px;
+            }
+            
+            .section-heading {
+                font-size: 24px;
+            }
+            
+            .routes-table {
+                overflow-x: auto;
+            }
+            
+            .routes-table th,
+            .routes-table td {
+                padding: 10px;
+                font-size: 13px;
+            }
+            
+            .final-cta h2 {
+                font-size: 24px;
+            }
+            
+            .btn-final {
+                padding: 16px 28px;
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header-cta {
+                gap: 15px;
+            }
+            
+            .btn {
+                padding: 8px 10px;
+                font-size: 10px;
+            }
+        }
+
+        
+@media (max-width: 480px) {
+    .btn-text {
+        font-size: 13px;
+    }
+    .cta-icon {
+        width: 24px;
+        height: 24px;
+    }
+}
